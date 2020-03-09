@@ -10,7 +10,7 @@ Public Sub SearchSquareBrackets(ByVal ps_VbcName As String, ByVal pl_CodeLine As
 End Sub
 
 Public Sub SearchImplicitWbk(ByVal ps_VbcName As String, ByVal pl_CodeLine As Long, ByVal ps_CodeLine As String)
-    reg.Pattern = "(^|[^(\w|\.)])(Sheets|Worksheets)($|\.|\(| )"
+    reg.Pattern = "(^|[^\.|\w])(Sheets|Worksheets)($|\.|\(| )"
     
     If (reg.test(ps_CodeLine)) Then
         reg.Pattern = " As (Worksheet|Sheet)(s)?"
@@ -22,7 +22,7 @@ Public Sub SearchImplicitWbk(ByVal ps_VbcName As String, ByVal pl_CodeLine As Lo
 End Sub
 
 Public Sub SearchImplicitWs(ByVal ps_VbcName As String, ByVal pl_CodeLine As Long, ByVal ps_CodeLine As String)
-    reg.Pattern = "(^|[^(\w|\.)])(Cells|Range)($|\.|\(| )"
+    reg.Pattern = "(^|[^\.|\w])(Cells|Range)($|\.|\(| )"
     
     If (reg.test(ps_CodeLine)) Then
         reg.Pattern = " As Range"
