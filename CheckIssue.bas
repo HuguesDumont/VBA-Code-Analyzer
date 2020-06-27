@@ -1,5 +1,6 @@
 Attribute VB_Name = "CheckIssue"
 Option Explicit
+' Developped by Hugues DUMONT
 
 Public Sub SearchSquareBrackets(ByVal ps_VbcName As String, ByVal pl_CodeLine As Long, ByVal ps_CodeLine As String)
     If (InStr(ps_CodeLine, "[") > 0) Then
